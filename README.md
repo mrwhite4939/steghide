@@ -9,6 +9,7 @@ git clone https://github.com/mrwhite4939/steghide.git
 cd steghide
 
 bash steghide.sh
+
 ---
 📌 Termux (Android)
 
