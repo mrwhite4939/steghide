@@ -3,8 +3,11 @@
 📌 Kali Linux
 
 sudo apt update
+
 git clone https://github.com/mrwhite4939/steghide.git
+
 cd steghide
+
 bash steghide.sh
 ---
 📌 Termux (Android)
@@ -17,7 +20,7 @@ pkg install steghide
 
 ⚠ If steghide is not found, install from a compiled package:
 
-pkg install git clang make automake
+pkg install git
 git clone https://github.com/Steghide/steghide.git
 cd steghide
 bash steghide.sh
