@@ -24,7 +24,7 @@ pkg install steghide
 
 pkg install git
 
-git clone https://github.com/Steghide/steghide.git
+git clone https://github.com/mrwhite4939/steghide.git
 
 cd steghide
 
