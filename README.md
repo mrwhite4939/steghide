@@ -19,3 +19,5 @@ cd steghide
 bash install.sh
 bash steghide.sh
 ```
+---
+You can view the tool through an image. 
