@@ -5,6 +5,7 @@
 sudo apt update
 git clone https://github.com/mrwhite4939/steghide.git
 cd steghide
+bash install.sh
 bash steghide.sh
 ```
 ---
@@ -15,5 +16,6 @@ pkg update && pkg upgrade
 pkg install git
 git clone https://github.com/mrwhite4939/steghide.git
 cd steghide
+bash install.sh
 bash steghide.sh
 ```
