@@ -6,7 +6,7 @@ echo -e "   / ___// /____  ____ _/ / / (_)___/ /__ "
 echo -e "   \__ \/ __/ _ \/ __ '/ /_/ / / __  / _ \ "
 echo -e "  ___/ / /_/  __/ /_/ / __  / / /_/ /  __/ "
 echo -e " /____/\__/\___/\__, /_/ /_/_/\__,_/\___/ "
-echo -e "               /____/ by Ren \e[0m     "
+echo -e "               /____/ by MrWhite4939 \e[0m     "
 menu() {
 	printf "\e[1;93mThis is a tool that hides the message or file in an image.\e[0m\n"
 	printf "\e[1;37mThank you for using my tool.\e[0m\n"
