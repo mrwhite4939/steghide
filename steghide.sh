@@ -1,6 +1,5 @@
 #!/bin/bash
-#author: HackTechAcademy
-#Team: Anonymous
+#author: MrWhite
 clear || cls
 echo -e "\e[32m    _____ __             __  ___     __   "
 echo -e "   / ___// /____  ____ _/ / / (_)___/ /__ "
@@ -12,13 +11,8 @@ menu() {
 	printf "\e[1;93mThis is a tool that hides the message or file in an image.\e[0m\n"
 	printf "\e[1;37mThank you for using my tool.\e[0m\n"
 	printf "\n"
-	printf "\e[1;93m\tNickname: HackTechAcademy\e[0m\n"
-	printf "\e[1;93m\tTeam: Anonymous Society\e[0m\n"
-	printf "\e[1;94m\tMy Name Real: Ren\e[0m\n"
-	printf "\e[1;94m\tMy Country: Japan\e[0m\n"
-	
 }
-echo -e " -\e[90m(https://discord.com/users/1417141835960160428)\e[0m"
+echo -e " -\e[90m(github.com/mrwhite4939)\e[0m"
 # 94 light blue
 # 90 gray
 menu
