@@ -21,3 +21,4 @@ bash steghide.sh
 ```
 ---
 You can view the tool through an image. 
+![steghide](https://github.com/mrwhite4939/steghide/blob/main/StegHide.png)
