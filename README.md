@@ -9,19 +9,11 @@ bash steghide.sh
 ```
 ---
  📌 Termux (Android)
-
-Steghide is not officially available on Termux packages,
-but you can install it manually using pkg + build tools:
+ 
 ```
 pkg update && pkg upgrade
-```
-⚠ If steghide is not found, install from a compiled package:
-```
 pkg install git
-
 git clone https://github.com/mrwhite4939/steghide.git
-
 cd steghide
-
 bash steghide.sh
 ```
