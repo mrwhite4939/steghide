@@ -1,0 +1,428 @@
+#!/bin/bash
+
+# Color codes
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[1;34m'
+MAGENTA='\033[1;35m'
+CYAN='\033[1;36m'
+WHITE='\033[1;37m'
+RESET='\033[0m'
+BOLD='\033[1m'
+
+# Clear screen function
+clear_screen() {
+    clear
+}
+
+# Print banner
+print_banner() {
+    echo -e "${YELLOW}"
+    cat << "EOF"
+  _____ _             _    _ _     _      
+ / ____| |           | |  | (_)   | |     
+| (___ | |_ ___  __ _| |__| |_  __| | ___ 
+ \___ \| __/ _ \/ _` |  __  | |/ _` |/ _ \
+ ____) | ||  __/ (_| | |  | | | (_| |  __/
+|_____/ \__\___|\__, |_|  |_|_|\__,_|\___|
+                 __/ |                     
+                |___/ By MrWhite4939       
+EOF
+    echo -e "${RESET}"
+    echo -e "${GREEN}═══════════════════════════════════════════════════════${RESET}"
+    echo -e "${YELLOW}${BOLD}     Advanced Steganography Tool - Professional${RESET}"
+    echo -e "${GREEN}═══════════════════════════════════════════════════════${RESET}"
+    echo ""
+}
+
+# Print main menu
+print_menu() {
+    echo -e "${YELLOW}╔═══════════════════════════════════════════════════╗${RESET}"
+    echo -e "${YELLOW}║${RESET}               ${BOLD}${GREEN}MAIN MENU${RESET}                       ${YELLOW}║${RESET}"
+    echo -e "${YELLOW}╠═══════════════════════════════════════════════════╣${RESET}"
+    echo -e "${YELLOW}║${RESET}                                                   ${YELLOW}║${RESET}"
+    echo -e "${YELLOW}║${RESET}  ${GREEN}[1]${RESET} Hide Data         - Embed data into file       ${YELLOW}║${RESET}"
+    echo -e "${YELLOW}║${RESET}  ${GREEN}[2]${RESET} Extract Data      - Retrieve hidden data       ${YELLOW}║${RESET}"
+    echo -e "${YELLOW}║${RESET}  ${GREEN}[3]${RESET} Check File        - Check if file has data     ${YELLOW}║${RESET}"
+    echo -e "${YELLOW}║${RESET}  ${GREEN}[4]${RESET} Supported Formats - View supported formats     ${YELLOW}║${RESET}"
+    echo -e "${YELLOW}║${RESET}  ${GREEN}[5]${RESET} About Tool        - Information about tool     ${YELLOW}║${RESET}"
+    echo -e "${YELLOW}║${RESET}  ${RED}[6]${RESET} Exit              - Close application          ${YELLOW}║${RESET}"
+    echo -e "${YELLOW}║${RESET}                                                   ${YELLOW}║${RESET}"
+    echo -e "${YELLOW}╚═══════════════════════════════════════════════════╝${RESET}"
+    echo ""
+}
+
+# Print supported formats
+print_formats() {
+    clear_screen
+    print_banner
+    echo -e "${GREEN}╔═══════════════════════════════════════════════════╗${RESET}"
+    echo -e "${GREEN}║${RESET}          ${BOLD}${YELLOW}SUPPORTED FILE FORMATS${RESET}               ${GREEN}║${RESET}"
+    echo -e "${GREEN}╠═══════════════════════════════════════════════════╣${RESET}"
+    echo -e "${GREEN}║${RESET}                                                   ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}  ${YELLOW}Image Formats:${RESET}                                 ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}    - JPEG (.jpg, .jpeg)                          ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}    - BMP  (.bmp)                                 ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}                                                   ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}  ${YELLOW}Audio Formats:${RESET}                                 ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}    - WAV (.wav)                                  ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}    - AU  (.au)                                   ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}                                                   ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}  ${YELLOW}Hidden Data:${RESET}                                   ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}    - Any file type can be hidden                 ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}    - Text messages                               ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}    - Documents, images, archives, etc.           ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}                                                   ${GREEN}║${RESET}"
+    echo -e "${GREEN}╚═══════════════════════════════════════════════════╝${RESET}"
+    echo ""
+}
+
+# Print info
+print_info() {
+    clear_screen
+    print_banner
+    echo -e "${GREEN}╔═══════════════════════════════════════════════════╗${RESET}"
+    echo -e "${GREEN}║${RESET}          ${BOLD}${YELLOW}ABOUT STEGANOGRAPHY${RESET}                  ${GREEN}║${RESET}"
+    echo -e "${GREEN}╠═══════════════════════════════════════════════════╣${RESET}"
+    echo -e "${GREEN}║${RESET}                                                   ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}  Steganography is the practice of concealing     ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}  messages or files within other files to avoid   ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}  detection.                                      ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}                                                   ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}  ${YELLOW}Features:${RESET}                                      ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}    - Hide any file type                          ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}    - Support for images and audio                ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}    - Invisible to naked eye                      ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}    - Easy and simple to use                      ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}    - Secure communication                        ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}                                                   ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}  ${YELLOW}Developer:${RESET} MrWhite4939                          ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}  ${YELLOW}Version:${RESET} 2.0 Professional                      ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}  ${YELLOW}Platforms:${RESET} Termux & Kali Linux                 ${GREEN}║${RESET}"
+    echo -e "${GREEN}║${RESET}                                                   ${GREEN}║${RESET}"
+    echo -e "${GREEN}╚═══════════════════════════════════════════════════╝${RESET}"
+    echo ""
+}
+
+# Detect OS
+detect_os() {
+    if [[ -d "/data/data/com.termux" ]] || [[ "$PREFIX" == *"com.termux"* ]]; then
+        echo "termux"
+    elif [[ -f "/etc/os-release" ]]; then
+        if grep -q "Kali" /etc/os-release 2>/dev/null; then
+            echo "kali"
+        else
+            echo "linux"
+        fi
+    else
+        echo "unknown"
+    fi
+}
+
+# Check if steghide is installed
+check_steghide() {
+    if ! command -v steghide &> /dev/null; then
+        echo -e "${RED}Error: steghide is not installed!${RESET}"
+        echo -e "${YELLOW}Installing steghide...${RESET}"
+        echo ""
+        
+        local os_type=$(detect_os)
+        
+        case $os_type in
+            termux)
+                echo -e "${CYAN}Detected: Termux${RESET}"
+                pkg update -y && pkg install -y steghide
+                ;;
+            kali|linux)
+                echo -e "${CYAN}Detected: Kali Linux${RESET}"
+                if command -v sudo &> /dev/null; then
+                    sudo apt-get update && sudo apt-get install -y steghide
+                else
+                    apt-get update && apt-get install -y steghide
+                fi
+                ;;
+            *)
+                echo -e "${RED}Unsupported platform!${RESET}"
+                echo -e "${YELLOW}Please install steghide manually:${RESET}"
+                echo "  Termux: pkg install steghide"
+                echo "  Kali: sudo apt-get install steghide"
+                exit 1
+                ;;
+        esac
+        
+        if ! command -v steghide &> /dev/null; then
+            echo -e "${RED}Failed to install steghide!${RESET}"
+            exit 1
+        fi
+        
+        echo -e "${GREEN}steghide installed successfully!${RESET}"
+        echo ""
+        sleep 2
+    fi
+}
+
+# Validate file format
+validate_format() {
+    local file=$1
+    local ext="${file##*.}"
+    ext=$(echo "$ext" | tr '[:upper:]' '[:lower:]')
+    
+    if [[ "$ext" =~ ^(jpg|jpeg|bmp|wav|au)$ ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+# Check if file has hidden data
+check_file() {
+    clear_screen
+    print_banner
+    echo -e "${YELLOW}╔═══════════════════════════════════════════════════╗${RESET}"
+    echo -e "${YELLOW}║${RESET}              ${BOLD}${GREEN}CHECK FILE FOR DATA${RESET}              ${YELLOW}║${RESET}"
+    echo -e "${YELLOW}╚═══════════════════════════════════════════════════╝${RESET}"
+    echo ""
+    
+    echo -ne "${GREEN}Enter file path to check: ${RESET}"
+    read check_file
+    
+    if [[ ! -f "$check_file" ]]; then
+        echo -e "${RED}Error: File not found!${RESET}"
+        echo ""
+        return
+    fi
+    
+    echo ""
+    echo -e "${YELLOW}Checking file...${RESET}"
+    
+    if steghide info "$check_file" -p "" 2>/dev/null | grep -q "embedded data"; then
+        echo -e "${GREEN}Success! This file contains hidden data.${RESET}"
+        steghide info "$check_file" -p "" 2>/dev/null
+    else
+        echo -e "${YELLOW}No hidden data found in this file.${RESET}"
+    fi
+    
+    echo ""
+}
+
+# Hide data function
+hide_data() {
+    clear_screen
+    print_banner
+    echo -e "${GREEN}╔═══════════════════════════════════════════════════╗${RESET}"
+    echo -e "${GREEN}║${RESET}              ${BOLD}${YELLOW}HIDE SECRET DATA${RESET}                   ${GREEN}║${RESET}"
+    echo -e "${GREEN}╚═══════════════════════════════════════════════════╝${RESET}"
+    echo ""
+    
+    # Get cover file
+    echo -e "${YELLOW}Supported: JPEG, BMP, WAV, AU${RESET}"
+    echo -ne "${GREEN}Enter cover file path: ${RESET}"
+    read cover_file
+    
+    # Validate cover file
+    if [[ ! -f "$cover_file" ]]; then
+        echo -e "${RED}Error: Cover file not found!${RESET}"
+        echo ""
+        return
+    fi
+    
+    # Check file format
+    if ! validate_format "$cover_file"; then
+        echo -e "${RED}Error: Unsupported format!${RESET}"
+        echo -e "${YELLOW}Supported: JPEG, BMP, WAV, AU${RESET}"
+        echo ""
+        return
+    fi
+    
+    echo ""
+    echo -e "${YELLOW}Choose data type to hide:${RESET}"
+    echo -e "  ${GREEN}[1]${RESET} Type message directly"
+    echo -e "  ${GREEN}[2]${RESET} Text file (.txt)"
+    echo -e "  ${GREEN}[3]${RESET} Any file (documents, images, etc)"
+    echo ""
+    echo -ne "${GREEN}Enter choice [1-3]: ${RESET}"
+    read data_choice
+    
+    echo ""
+    
+    case $data_choice in
+        1)
+            # Direct text message
+            echo -ne "${GREEN}Enter your secret message: ${RESET}"
+            read secret_message
+            
+            # Create temporary file
+            temp_file=$(mktemp)
+            echo "$secret_message" > "$temp_file"
+            secret_file="$temp_file"
+            ;;
+        2)
+            # Text file
+            echo -ne "${GREEN}Enter text file path: ${RESET}"
+            read secret_file
+            
+            if [[ ! -f "$secret_file" ]]; then
+                echo -e "${RED}Error: Text file not found!${RESET}"
+                echo ""
+                return
+            fi
+            ;;
+        3)
+            # Any file
+            echo -ne "${GREEN}Enter file path to hide: ${RESET}"
+            read secret_file
+            
+            if [[ ! -f "$secret_file" ]]; then
+                echo -e "${RED}Error: File not found!${RESET}"
+                echo ""
+                return
+            fi
+            ;;
+        *)
+            echo -e "${RED}Invalid choice!${RESET}"
+            echo ""
+            return
+            ;;
+    esac
+    
+    # Get output file - automatically modify original name
+    base_name="${cover_file%.*}"
+    ext="${cover_file##*.}"
+    output_file="${base_name}_hidden.${ext}"
+    
+    # Hide the data without password
+    echo ""
+    echo -e "${YELLOW}Processing...${RESET}"
+    echo -e "${YELLOW}Creating: ${output_file}${RESET}"
+    
+    if steghide embed -cf "$cover_file" -ef "$secret_file" -sf "$output_file" -p "" -f 2>/dev/null; then
+        echo ""
+        echo -e "${GREEN}╔═══════════════════════════════════════════════════╗${RESET}"
+        echo -e "${GREEN}║${RESET}              ${BOLD}${YELLOW}SUCCESS!${RESET}                          ${GREEN}║${RESET}"
+        echo -e "${GREEN}╠═══════════════════════════════════════════════════╣${RESET}"
+        echo -e "${GREEN}║${RESET}  Data hidden successfully!                       ${GREEN}║${RESET}"
+        echo -e "${GREEN}║${RESET}  Output file: ${output_file}${RESET}"
+        echo -e "${GREEN}║${RESET}                                                   ${GREEN}║${RESET}"
+        echo -e "${GREEN}║${RESET}  The original file remains unchanged.            ${GREEN}║${RESET}"
+        echo -e "${GREEN}║${RESET}  New file contains your hidden data.             ${GREEN}║${RESET}"
+        echo -e "${GREEN}╚═══════════════════════════════════════════════════╝${RESET}"
+    else
+        echo -e "${RED}Failed to hide data!${RESET}"
+        echo -e "${YELLOW}Tip: Make sure the cover file is large enough.${RESET}"
+    fi
+    
+    # Remove temporary file if created
+    if [[ "$data_choice" == "1" ]]; then
+        rm -f "$temp_file"
+    fi
+    
+    echo ""
+}
+
+# Extract data function
+extract_data() {
+    clear_screen
+    print_banner
+    echo -e "${GREEN}╔═══════════════════════════════════════════════════╗${RESET}"
+    echo -e "${GREEN}║${RESET}            ${BOLD}${YELLOW}EXTRACT HIDDEN DATA${RESET}                 ${GREEN}║${RESET}"
+    echo -e "${GREEN}╚═══════════════════════════════════════════════════╝${RESET}"
+    echo ""
+    
+    # Get stego file
+    echo -ne "${GREEN}Enter file with hidden data: ${RESET}"
+    read stego_file
+    
+    if [[ ! -f "$stego_file" ]]; then
+        echo -e "${RED}Error: File not found!${RESET}"
+        echo ""
+        return
+    fi
+    
+    # Get output file
+    echo -ne "${GREEN}Enter output file name: ${RESET}"
+    read output_file
+    
+    # Extract the data without password
+    echo ""
+    echo -e "${YELLOW}Extracting hidden data...${RESET}"
+    
+    if steghide extract -sf "$stego_file" -xf "$output_file" -p "" -f 2>/dev/null; then
+        echo ""
+        echo -e "${GREEN}╔═══════════════════════════════════════════════════╗${RESET}"
+        echo -e "${GREEN}║${RESET}              ${BOLD}${YELLOW}SUCCESS!${RESET}                          ${GREEN}║${RESET}"
+        echo -e "${GREEN}╠═══════════════════════════════════════════════════╣${RESET}"
+        echo -e "${GREEN}║${RESET}  Data extracted successfully!                    ${GREEN}║${RESET}"
+        echo -e "${GREEN}║${RESET}  Saved to: ${output_file}${RESET}"
+        echo -e "${GREEN}╚═══════════════════════════════════════════════════╝${RESET}"
+        
+        # Try to display if it's a text file
+        if file "$output_file" 2>/dev/null | grep -q "text"; then
+            echo ""
+            echo -e "${YELLOW}Content Preview:${RESET}"
+            echo -e "${GREEN}───────────────────────────────────────────────────${RESET}"
+            cat "$output_file"
+            echo -e "${GREEN}───────────────────────────────────────────────────${RESET}"
+        fi
+    else
+        echo -e "${RED}Failed to extract data!${RESET}"
+        echo -e "${YELLOW}Possible reasons:${RESET}"
+        echo "  - No hidden data in this file"
+        echo "  - File is corrupted"
+        echo "  - Wrong file format"
+    fi
+    
+    echo ""
+}
+
+# Main function
+main() {
+    # Check if steghide is installed
+    check_steghide
+    
+    while true; do
+        clear_screen
+        print_banner
+        print_menu
+        
+        echo -ne "${GREEN}${BOLD}Enter your choice [1-6]: ${RESET}"
+        read choice
+        
+        case $choice in
+            1)
+                hide_data
+                ;;
+            2)
+                extract_data
+                ;;
+            3)
+                check_file
+                ;;
+            4)
+                print_formats
+                ;;
+            5)
+                print_info
+                ;;
+            6)
+                echo ""
+                echo -e "${GREEN}╔═══════════════════════════════════════════════════╗${RESET}"
+                echo -e "${GREEN}║${RESET}      ${BOLD}${YELLOW}Thank you for using SteagHide!${RESET}         ${GREEN}║${RESET}"
+                echo -e "${GREEN}╚═══════════════════════════════════════════════════╝${RESET}"
+                echo ""
+                exit 0
+                ;;
+            *)
+                echo ""
+                echo -e "${RED}Invalid choice! Please select 1-6${RESET}"
+                sleep 1
+                ;;
+        esac
+        
+        echo -ne "${YELLOW}Press ENTER to continue...${RESET}"
+        read
+    done
+}
+
+# Run the script
+main
