@@ -1,3 +1,7 @@
+## StegHide
+![steghide](https://github.com/mrwhite4939/steghide/blob/main/StegHide.png)
+---
+
 # 🛠️ Installation
 
 📌 Kali Linux
@@ -19,6 +23,3 @@ cd steghide
 chmod +x *
 ./steghide
 ```
----
-You can view the tool through an image. 
-![steghide](https://github.com/mrwhite4939/steghide/blob/main/StegHide.png)
