@@ -3,7 +3,7 @@
 📌 Kali Linux
 ```
 sudo apt update
-git clone https://github.com/mrwhite4939/steghide.git
+git clone https://github.com/mrwhite4939/steghide
 cd steghide
 chmod +x *
 ./steghide.sh
@@ -14,7 +14,7 @@ chmod +x *
 ```
 pkg update && pkg upgrade
 pkg install git
-git clone https://github.com/mrwhite4939/steghide.git
+git clone https://github.com/mrwhite4939/steghide
 cd steghide
 chmod +x *
 ./steghide
