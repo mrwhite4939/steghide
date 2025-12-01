@@ -23,3 +23,4 @@ cd steghide
 chmod +x *
 ./steghide
 ```
+---
