@@ -1,4 +1,4 @@
-## StegHide
+# StegHide
 ![steghide](https://github.com/mrwhite4939/steghide/blob/main/StegHide.jpg)
 ---
 
