@@ -10,7 +10,7 @@ sudo apt update
 git clone https://github.com/mrwhite4939/steghide
 cd steghide
 chmod +x *
-./steghide.sh
+./steghide
 ```
 ---
  📌 Termux (Android)
